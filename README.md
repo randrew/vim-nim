@@ -13,10 +13,10 @@ This provides [Nim](http://nim-lang.org) language support for Vim:
 ## vim-plug
   
 1. [Install vim-plug](https://github.com/junegunn/vim-plug#installation)
-2. Add `Plug 'kori/vim-nim'
+2. Add `Plug 'kori/vim-nim'` to your config.
 
 ##Final Step
-Next you *need to add this* to your `~/.vimrc`:
+Next you *need to add this* to your editor configuration.:
 
     fun! JumpToDef()
       if exists("*GotoDefinition_" . &filetype)
