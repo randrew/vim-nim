@@ -1,5 +1,5 @@
 import threading, Queue, subprocess, signal, os
-import tempfile
+#import tempfile
 
 try:
   import vim
@@ -76,7 +76,7 @@ def nimRestartService(project):
   nimTerminateService(project)
   nimStartService(project)
 
-NimLog = tempfile.TemporaryFile("w")
+#NimLog = tempfile.TemporaryFile("w")
 
 def nimExecCmd(project, cmd, async = True):
   target = None
@@ -86,9 +86,9 @@ def nimExecCmd(project, cmd, async = True):
     target = nimStartService(project)
   
   result = target.postNimCmd(cmd, async)
-  if result != None:
-    NimLog.write(result)
-    NimLog.flush()
+  #if result != None:
+  #  NimLog.write(result)
+  #  NimLog.flush()
   
   if not async:
     vim.command('let l:py_res = "' + nimVimEscape(result) + '"')
